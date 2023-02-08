@@ -15,4 +15,6 @@ RUN npm run build
 # Create nginx container
 FROM nginx:latest
 
+EXPOSE 80
+
 COPY --from=builder /app/dist/frontend /usr/share/nginx/html
