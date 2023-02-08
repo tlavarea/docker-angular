@@ -1,0 +1,8 @@
+sudo: required
+language: generic
+services:
+  - docker
+before_install:
+  - docker build -f Dockerfile.dev -t tlavarea/docker-angular .
+script:
+  - docker run tlavarea/docker-angular npm run coverage
